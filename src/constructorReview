@@ -1,0 +1,43 @@
+Since we have learned constructor more in-depth with inheritance, it's time to review 
+
+In your own word answer few questions below 
+
+1, where can a constructor be called in a class ( other than being called when the object is created)? 
+
+hint, from this class and parent class
+
+2, what keyword do you use to call a constructor in another constructor of the same class?
+
+hint, how do you call other constructors for class A in a constructor of class A?
+
+3, what is the first line of any constructors if not defined otherwise by the user? how to change this implicit behavior?
+
+hint, what happens when Superclass and Subclass both have a no-arg constructor and you create a Subclass object in main?
+
+4, since constructor, is not inherited in a subclass, how do you call different constructors of super class?
+
+5, As the title suggests, given a subclass has multiple constructors,
+
+ is there any chance, none of them call any version of super class's constructor when user change the implicit call behavior of the compiler by using this(args)?
+
+hint, in class A with 3 constructors, try to use this(args...) in constructors and see whether you can replace the call to super class's constructors in all of them. 
+
+ 
+ 1. Just constructor can be call constructor other than creating object. if we call in same class we need to use this() keyword, it need to be just one time and first line.
+ if we call from sub class to parent class , we need to use super() keyword. Constructor will take argument but constructors cannot call themselves.
+ 
+ 2. this();
+ 
+ 3. Even though we don't see any constructor. When we create a class compiler give us automatically from object class. just super() keyword is invisible.
+ 
+ 4.With super keyword we call call, if constructor have any arguments,we have to add arguments. It need to match at least one constructor.
+ 
+ 5. just we can call our constructor in same class with this() keyword. 
+ 
+ 
+ When we create an object from sub class, first it goes parent class because of extends keyword. 
+ It check first parents class, and inherit all visible fields and method. if we have a static block, 
+ it always print static block first and just a one time. if we have a more than one static method it print top to bottom.
+  Then, it print init block, also if we have more than one, it goes top the bottom. After that print matches constructor.
+  After completed parent class, same process happen for sub classes. 
+  sub classes always include more detail than parent class.*Static block runs one time, but init block run  each time when we create object. 
